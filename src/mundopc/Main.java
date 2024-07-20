@@ -1,8 +1,7 @@
 package mundopc;
 
-import mundopc.modelo.InputDevice;
-import mundopc.modelo.Keyboard;
-import mundopc.modelo.Mouse;
+import mundopc.modelo.*;
+import mundopc.service.Order;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +12,13 @@ public class Main {
     List<InputDevice> lista = new ArrayList<>();
     Mouse mouse = new Mouse("Gaming mouse", "Razer");
     Keyboard keyboard = new Keyboard("Ergonomic","Logitec");
+    Monitor monitor = new Monitor("ACO", "22'");
 
-    lista.add(mouse);
-    lista.add(keyboard);
-    
-    lista.forEach(System.out::println);
+    // create the computer object
+    Computer pc = new Computer("Gaming all in one", monitor,keyboard,mouse);
+
+    Order order = new Order();
+    order.addComputer(pc);
+    order.listComputers();
   }
 }

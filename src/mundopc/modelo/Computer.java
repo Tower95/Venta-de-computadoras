@@ -3,7 +3,7 @@ package mundopc.modelo;
 public class Computer {
 
   // Properties
-  private final int idComputer;
+  private int idComputer;
   private static int computerCounter = 0;
   private String name;
   private Monitor monitor;
@@ -61,4 +61,17 @@ public class Computer {
   public void setMouse(Mouse mouse) {
     this.mouse = mouse;
   }
+
+  // To String mehtod
+  @Override
+  public String toString() {
+    return "Computer{\n" +
+            "idComputer=" + idComputer +
+            "\n, name='" + name + '\'' +
+            "\n, monitor=" + monitor +
+            "\n, keyboard=" + keyboard +
+            "\n, mouse=" + mouse +
+            '}';
+  }
 }
+
